@@ -73,7 +73,7 @@ class Token(abc.ABC):
             raise ValueError(f"Value {self.value} is not a valid token")
         elif 'identifier' in self._properties:
             if self._properties['identifier'] and sum(int(value) for value in
-                    self._properties.values()) > 1:
+                                                      self._properties.values()) > 1:
                 self._properties['identifier'] = False
 
     @abc.abstractmethod
