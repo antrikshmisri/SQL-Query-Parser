@@ -103,8 +103,7 @@ class Token(abc.ABC):
 class Keyword(Token):
     """Class to represent SQL keywords"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'keyword': __TOKEN_TYPES__['keyword']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -113,10 +112,9 @@ class Keyword(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'keyword': __TOKEN_TYPES__['keyword']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -126,8 +124,7 @@ class Keyword(Token):
 class Operator(Token):
     """Class to represent SQL operators"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'operator': __TOKEN_TYPES__['operator']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -136,10 +133,9 @@ class Operator(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'operator': __TOKEN_TYPES__['operator']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -149,8 +145,7 @@ class Operator(Token):
 class Separator(Token):
     """Class to represent SQL separators"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'separator': __TOKEN_TYPES__['separator']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -159,10 +154,9 @@ class Separator(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'separator': __TOKEN_TYPES__['separator']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -172,8 +166,7 @@ class Separator(Token):
 class Identifier(Token):
     """Class to represent SQL identifiers"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'identifier': __TOKEN_TYPES__['identifier']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -182,10 +175,9 @@ class Identifier(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'identifier': __TOKEN_TYPES__['identifier']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -195,8 +187,7 @@ class Identifier(Token):
 class Number(Token):
     """Class to represent SQL numbers"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'number': __TOKEN_TYPES__['number']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -205,10 +196,9 @@ class Number(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'number': __TOKEN_TYPES__['number']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -218,8 +208,7 @@ class Number(Token):
 class String(Token):
     """Class to represent SQL strings"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'string': __TOKEN_TYPES__['string']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -228,10 +217,9 @@ class String(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'string': __TOKEN_TYPES__['string']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -241,8 +229,7 @@ class String(Token):
 class Whitespace(Token):
     """Class to represent SQL whitespaces"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'whitespace': __TOKEN_TYPES__['whitespace']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -251,10 +238,9 @@ class Whitespace(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'whitespace': __TOKEN_TYPES__['whitespace']})
 
     def __str__(self):
         """Return the string representation of the token"""
@@ -264,8 +250,7 @@ class Whitespace(Token):
 class Aggregate(Token):
     """Class to represent SQL aggregates"""
 
-    def __init__(self, value, validate=True,
-                 valid_token_dict={'aggregate': __TOKEN_TYPES__['aggregate']}):
+    def __init__(self, value, validate=True):
         """Initialize the class.
 
         Parameters
@@ -274,10 +259,9 @@ class Aggregate(Token):
             The value of token
         validate: bool
             Whether to validate the value against token types
-        valid_token_dict: dict
-            A dictionary of valid token types and their values
         """
-        super().__init__(value, validate, valid_token_dict)
+        super().__init__(value, validate, {
+            'aggregate': __TOKEN_TYPES__['aggregate']})
 
     def __str__(self):
         """Return the string representation of the token"""
