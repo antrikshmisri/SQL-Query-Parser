@@ -21,7 +21,7 @@ class Token(abc.ABC):
 
     def __init__(self, value, validate=True, valid_token_dict=None):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -72,7 +72,8 @@ class Token(abc.ABC):
         if not any(list(self._properties.values())):
             raise ValueError(f"Value {self.value} is not a valid token")
         elif 'identifier' in self._properties:
-            if self._properties['identifier'] and sum(int(value) for value in self._properties.values()) > 1:
+            if self._properties['identifier'] and sum(int(value) for value in
+                    self._properties.values()) > 1:
                 self._properties['identifier'] = False
 
     @abc.abstractmethod
@@ -102,10 +103,10 @@ class Token(abc.ABC):
 class Keyword(Token):
     """Class to represent SQL keywords"""
 
-    def __init__(self, value, validate=True, 
+    def __init__(self, value, validate=True,
                  valid_token_dict={'keyword': __TOKEN_TYPES__['keyword']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -128,7 +129,7 @@ class Operator(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'operator': __TOKEN_TYPES__['operator']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -151,7 +152,7 @@ class Separator(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'separator': __TOKEN_TYPES__['separator']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -174,7 +175,7 @@ class Identifier(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'identifier': __TOKEN_TYPES__['identifier']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -197,7 +198,7 @@ class Number(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'number': __TOKEN_TYPES__['number']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -220,7 +221,7 @@ class String(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'string': __TOKEN_TYPES__['string']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -243,7 +244,7 @@ class Whitespace(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'whitespace': __TOKEN_TYPES__['whitespace']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
@@ -266,7 +267,7 @@ class Aggregate(Token):
     def __init__(self, value, validate=True,
                  valid_token_dict={'aggregate': __TOKEN_TYPES__['aggregate']}):
         """Initialize the class.
-        
+
         Parameters
         ----------
         value: str
