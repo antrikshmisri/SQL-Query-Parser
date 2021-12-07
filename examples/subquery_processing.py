@@ -14,7 +14,9 @@ from sqlparser.validators import base_query_validation
 PRINT_RAW_RESULT = False
 
 
-q = Query("SELECT SUM(height) as total_height, AVG(height) as average_height FROM ( SELECT id, height FROM person GROUP BY id, height ) WHERE height>100")
+q = Query("SELECT SUM(height) as total_height, AVG(height) as average_height"
+          " FROM ( SELECT id, height FROM person GROUP BY id, height ) WHERE height>100")
+
 base_query_validation(q)
 
 q_dict = create_query_dict(q)

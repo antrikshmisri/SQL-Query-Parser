@@ -14,7 +14,7 @@ class Query:
 
     def __init__(self, query=None, tokens=None):
         """Initialize the `Query` class.
-        
+
         Parameters
         ----------
         query: str
@@ -76,9 +76,9 @@ class Query:
                         f", {[token.value for token in self.tokens[subquery_start_idx:]]}")
 
                 subquery = Query(
-                    tokens=self.tokens[subquery_start_idx+1:subquery_end_idx])
+                    tokens=self.tokens[subquery_start_idx + 1:subquery_end_idx])
 
-                for subquery_token in self.tokens[subquery_start_idx:subquery_end_idx+1]:
+                for subquery_token in self.tokens[subquery_start_idx:subquery_end_idx + 1]:
                     self.tokens.remove(subquery_token)
 
                 self.tokens.insert(subquery_start_idx, subquery)
@@ -93,7 +93,7 @@ class Query:
         ----------
         start_idx: int
             Start index of the subquery
-        
+
         Returns
         -------
         tuple
@@ -116,12 +116,12 @@ class Query:
 
 def create_query_dict(query):
     """Create a dictionary from a query.
-    
+
     Paramters
     ---------
     query: Query
         Query that is to be converted
-    
+
     Returns
     -------
     dict
@@ -136,7 +136,7 @@ def create_query_dict(query):
 
     for token in query.tokens:
         if isinstance(token, Keyword):
-            for token_pair in query.tokens[query.tokens.index(token)+1:]:
+            for token_pair in query.tokens[query.tokens.index(token) + 1:]:
                 if isinstance(token_pair, Keyword):
                     break
 

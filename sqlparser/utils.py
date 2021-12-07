@@ -11,12 +11,12 @@ from sqlparser.tokens import (Aggregate, Identifier, Keyword, Number, Operator,
 
 def get_token_class(token_name):
     """Get the resperctive token class from a token name.
-    
+
     Parameters
     ----------
     token_name: str
         Name of the token, SELECT, WHERE, etc.
-    
+
     Returns
     -------
     token_class: :class: `tokens.Token`
@@ -57,7 +57,7 @@ def get_token_class(token_name):
 
 def raise_error_from_dict(error_dict):
     """Raise error from an error dict.
-    
+
     Parameters
     ----------
     error_dict: dict
@@ -69,7 +69,7 @@ def raise_error_from_dict(error_dict):
 
 def get_error_dict(error_type, message, error_index):
     """Get an error dict for a specific error type.
-    
+
     Parameters
     ----------
     error_type: :class: `Exception`
@@ -78,7 +78,7 @@ def get_error_dict(error_type, message, error_index):
         Error message
     error_index: int
         Index of the error
-    
+
     Returns
     -------
     error_dict: dict
@@ -93,7 +93,7 @@ def get_error_dict(error_type, message, error_index):
 
 def print_process_heading(context_text):
     """Print a process heading.
-    
+
     Parameters
     ----------
     context_text: str
@@ -106,7 +106,7 @@ def print_process_heading(context_text):
 
 def token_name2type_dict():
     """Get the dictionary containing token names and their types.
-    
+
     Returns
     -------
     dict containing token names and their types.
@@ -135,7 +135,7 @@ def token_name2type_dict():
 
 def merge_consequtive_keywords(query):
     """Merge consequtive keywords that when merged form a valid keyword.
-    
+
     Parameters
     ----------
     query: :class: `Query`
@@ -172,12 +172,12 @@ def print_query_dict(query_dict):
 
 def get_flat_query(query):
     """Create a flat query from a nested query object.
-    
+
     Parameters
     ----------
     query: :class: `query.Query`
         The query that is to be processed
-    
+
     Returns
     -------
     list of tokens

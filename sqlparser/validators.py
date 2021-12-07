@@ -10,12 +10,12 @@ from sqlparser.utils import (get_error_dict, get_flat_query,
 
 def base_query_validation(query):
     """Basic query validtion.
-    
+
     Parameters
     ----------
     query: :class: `query.Query`
         The query object that is to be validated
-    
+
     Returns
     -------
     validation_result: bool or dict
@@ -37,12 +37,12 @@ def base_query_validation(query):
 
 def validate_token_order(query):
     """Validate if the order of the tokens are correct.
-    
+
     Parameters
     ----------
     query: :class: `query.Query`
         The query that is to be validated.
-    
+
     Returns
     -------
     validation_result: bool or dict
@@ -71,7 +71,7 @@ def validate_token_order(query):
                 error_dict = get_error_dict(
                     InvalidQueryError,
                     f'Invalid token order, {token.value} cannot precede {next_token.value}.',
-                    token_idx+1)
+                    token_idx + 1)
 
     return is_valid or raise_error_from_dict(error_dict)
 

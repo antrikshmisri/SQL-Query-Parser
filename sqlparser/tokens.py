@@ -5,7 +5,9 @@ from re import error
 from re import match as regex_match
 
 __TOKEN_TYPES__ = {
-    'keyword': ['SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'NOT', 'LIKE', 'IN', 'GROUP BY', 'INSERT', 'UPDATE', 'DELETE'],
+    'keyword': ['SELECT', 'FROM', 'WHERE', 'AND', 'OR',
+                'NOT', 'LIKE', 'IN', 'GROUP BY', 'INSERT',
+                'UPDATE', 'DELETE'],
     'operator': ['=', '<', '>', '<=', '>=', '!=', '+', '-', '*', '/', '%'],
     'separator': ['(', ')', ',', ';'],
     'whitespace': ['[ \t\n\r]+'],

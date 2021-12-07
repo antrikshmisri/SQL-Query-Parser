@@ -7,12 +7,12 @@ from sqlparser.tokens import Identifier
 
 def process_separator(query):
     """Process separator in a SQL query.
-    
+
     Parameters
     ----------
     query: str
         SQL query to be processed
-    
+
     Returns
     -------
     process_query: str
@@ -28,12 +28,12 @@ def process_separator(query):
 
 def process_case(query):
     """Process character case in SQL query
-    
+
     Parameters
     ----------
     query: str
         SQL query to be processed
-    
+
     Returns
     -------
     process_query: str
@@ -64,12 +64,12 @@ class FilterStack:
 
     def __call__(self, query):
         """Apply filters to the SQL query.
-        
+
         Parameters
         ----------
         query: str
             SQL query to be processed
-        
+
         Returns
         -------
         process_query: str
@@ -82,7 +82,7 @@ class FilterStack:
 
     def add(self, filter):
         """Add a filter to the filter stack.
-        
+
         Parameters
         ----------
         filter: function
@@ -95,7 +95,7 @@ class FilterStack:
 
     def remove(self, filter):
         """Remove a filter from the filter stack.
-        
+
         Parameters
         ----------
         filter: function
