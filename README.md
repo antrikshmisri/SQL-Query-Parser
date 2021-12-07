@@ -54,7 +54,7 @@ pip install -r requirements.txt
 pip install .
 ```
 
-5. Run the tests
+5. Run the tests ***(Tests for some module are yet to be added)***
 ```bash
 pytest -v sqlparser/tests/
 ```
