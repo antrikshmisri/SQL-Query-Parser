@@ -5,14 +5,16 @@ from re import error
 from re import match as regex_match
 
 __TOKEN_TYPES__ = {
-    'keyword': ['SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'NOT', 'LIKE', 'IN', 'GROUP BY'],
+    'keyword': ['SELECT', 'FROM', 'WHERE', 'AND', 'OR',
+                'NOT', 'LIKE', 'IN', 'GROUP BY', 'INSERT',
+                'UPDATE', 'DELETE'],
     'operator': ['=', '<', '>', '<=', '>=', '!=', '+', '-', '*', '/', '%'],
     'separator': ['(', ')', ',', ';'],
-    'identifier': ['[a-zA-Z_][a-zA-Z0-9_]*'],
-    'number': ['[0-9]+'],
-    'string': ['\'[^\']*\''],
     'whitespace': ['[ \t\n\r]+'],
     'aggregate': ['COUNT', 'SUM', 'AVG', 'MIN', 'MAX'],
+    'number': ['[0-9]+'],
+    'string': ['\'[^\']*\''],
+    'identifier': ['[a-zA-Z_][a-zA-Z0-9_]*'],
 }
 
 
