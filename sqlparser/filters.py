@@ -45,21 +45,6 @@ def process_case(query):
     return query
 
 
-def filter_case(query):
-    """Filter to convert all the string to upper case."""
-    return process_case(query)
-
-
-def filter_separator(query):
-    """Filter to remove all the separator in a SQL query."""
-    return process_separator(query)
-
-
-def filter_comment(query):
-    """Filter to remove all the comment in a SQL query."""
-    return query.replace('--', '')
-
-
 class FilterStack:
     """Filter stack to reduce SQL query to minimal tokens."""
 
@@ -103,6 +88,9 @@ class FilterStack:
         filter: function
             Filter to be added to the filter stack.
         """
+        if not filter.__name__.startswith('filter'):
+            raise ValueError('Filter must be a function.')
+
         self.filters.append(filter)
 
     def remove(self, filter):
