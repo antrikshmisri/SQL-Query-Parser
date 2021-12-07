@@ -50,7 +50,7 @@ class FilterStack:
 
     def __init__(self, filters=None):
         """Initialize the filter stack.
-        
+
         Parameters
         ----------
         filters: list
