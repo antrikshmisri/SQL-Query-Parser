@@ -6,6 +6,12 @@ Query parser for SQL.
 
 The parser's architecture is loosely based on the open source [sqlparse](https://github.com/andialbrecht/sqlparse) with some additions and complete rewrites. Below is a brief overview of how this parser works:
 
+## Installation
+
+```bash
+pip install git+https://github.com/antrikshmisri/SQL-Query-Parser.git
+```
+
 ## Working
 
 ***Note: Each token for now needs ro be space separated including the braces (This will be fixed in the future when proper token processing logic will be implemented)***, an example qeury would be:- <br />
