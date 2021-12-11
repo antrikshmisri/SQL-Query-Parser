@@ -18,7 +18,7 @@ classifiers = [
 
 
 setup(
-    name='parser',
+    name='sqlparser',
     version=version,
     description='Sql Query Parser',
     long_description=long_description,
@@ -30,5 +30,5 @@ setup(
     classifiers=classifiers,
     keywords=['sql', 'parser', 'query', 'parser'],
     include_package_data=True,
-    packages=['parser'],
+    packages=['sqlparser'],
 )
