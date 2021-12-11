@@ -31,4 +31,9 @@ setup(
     keywords=['sql', 'parser', 'query', 'parser'],
     include_package_data=True,
     packages=['sqlparser'],
+    entry_points={
+        'console_scripts': [
+            'sqlparser=sqlparser.__main__:run',
+        ],
+    },
 )
