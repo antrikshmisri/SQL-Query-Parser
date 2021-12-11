@@ -8,6 +8,7 @@ The parser's architecture is loosely based on the open source [sqlparse](https:/
 
 ## Working
 
+***Note: Each token for now needs ro be space separated including the braces (This will be fixed in the future when proper token processing logic will be implemented)***. 
 The basic building blocks for `sqlparser` are `Tokens` and `Query`. These classes represent `tokens` in a `query` and the `query` itself in an object format. Each query has a list of tokens present in it which may include subqueries. These tokens are validated before adding them to the query these validations may include token order checks/token validity etc (This is an optional step and can be enabled with `-vq` flag).
 
 This package does some processing and filtering before generating the `query_dict`. These procesing/filtering operations make sure that every unwanted token gets removed from the final query object. The processing helps in shaping the string query so that there has to be minimal processing while generating the query object from the string. The filtering helps in removing/adding/updating certain tokens/token pairs in the query object so that the query can be processed to form a `dict`
